@@ -1,0 +1,30 @@
+
+package mini.game;
+
+import java.util.Scanner;
+public class Game {
+   
+
+    public static void main(String[] args) {
+    int healthpoints= 3;  
+   Scanner input1= new Scanner(System.in); 
+     System.out.println("Enter your answer:"); 
+int ans1= input1.nextInt(); 
+String opt;
+switch (ans1)
+{
+case 1: opt= ("You toss the jerky as far as you can and the wolf chases after it. You get away safely.");
+break; 
+case 2: opt = ("You go to pull out the blanket but it gets snagged on a zipper. In that moment, the wolf attacks. You take one point of damage. The wolf runs off.");
+healthpoints--;
+break;
+case 3: opt= (" You don’t have a map, silly!! The wolf uses your moment of distraction as an opportunity to attack. You take one point of damage. The wolf runs off.");
+healthpoints--;
+break; 
+default: opt= ("invalid answer"); 
+    break;      
+}      
+System.out.println(opt + "your healthpoints:" + healthpoints);
+    }
+    
+}
