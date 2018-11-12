@@ -1,0 +1,47 @@
+Steps 
+1) output instruction, press “a” to start game
+2) While player press a,  computer chooses random setting  1) forest 2) dungeon 3) castle 
+3) player enters their name 
+4) if in forest, output the description of the forest and forest enemies 
+Output question 1 
+If player answer right, player moves on to next question and output saying “player successfully attacked the enemies” 
+Else, player loses a health point and output “the enemies attack you, you lose health point” 
+Repeat for 6 times
+If player loses all healthpoints before reaching final destination, player loses the game and goes back to main menu (step 1)
+5) the format of questions and concept is applied if computer chooses setting 2 or 3 
+
+Attrubites: healthpoints();
+
+Objects 
+Player 
+
+Behaviours 
+Getplayername 
+Getplayeranswer 
+losehealthpoint()
+Instruction () 
+
+Superclass : Game{}
+
+Subclass : forest{}, dungeon{}, castle{}
+
+subclass extends superclass
+obj player is created in the superclass main method 
+use switch statements for the descision 
+
+
+System.out.println("Enter your answer:"); 
+int ans1= input1.nextInt(); 
+String opt;
+switch (ans1)
+case 1: opt= ("You toss the jerky as far as you can and the wolf chases after it. You get away safely.");
+break; 
+case 2: opt = ("You go to pull out the blanket but it gets snagged on a zipper. In that moment, the wolf attacks. You take one point of damage. The wolf runs off.");
+break;
+case 3: opt= (" You don’t have a map, silly!! The wolf uses your moment of distraction as an opportunity to attack. You take one point of damage. The wolf runs off.");
+healthpoints--; 
+break; 
+default opt= ("invalid answer"); 
+
+
+
