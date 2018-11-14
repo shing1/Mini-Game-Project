@@ -33,6 +33,7 @@ System.out.println(opt + "your healthpoints:" + healthpoints);
 //
 
 
+
 package game1;
 import java.util.Scanner;
 
@@ -72,3 +73,17 @@ class Forest extends Game1{
   
   }  
   
+    
+
+
+
+
+public class Game1 {
+    int health=3; 
+
+    public static void main(String[] args) {
+     
+     Forest player = new Forest();  
+     player.getQuestion();      
+}
+}
