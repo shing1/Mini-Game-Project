@@ -1,12 +1,12 @@
 (instructions, press () to start, randomize scenario)
-*Game needs name name of the game is game until game name has been name yeeeehaww
+*Game needs name
 
 
 Import java.util.Random;
 Import java.util.Scanner; //scanner to be used later to let player choose outcomes
 //in superclass
 
-System.out.println; (“Welcome to Game. \n The instructions are simple: read carefully, answer only with 1,2, or 3, and don’t die. \n Press ‘s’ to start.”);
+System.out.println; (“Welcome to Game*. \n The instructions are simple: read carefully, answer only with 1,2, or 3, and don’t die. \n Press ‘s’ to start.”);
 
 getRandomNumberInRange (1,3);
 Int story = input.next;
