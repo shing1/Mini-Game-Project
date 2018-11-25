@@ -1,0 +1,247 @@
+//Mini Game: Role Playing Adventure
+//Sarah Hing & Sarah Kerfoot 
+
+package game1;
+import java.util.Scanner;
+
+class Forest extends Game1{
+  
+  public void intro(){   
+      
+      System.out.println ("Welcome to Game*. Instructions: READ carefully, answer only with 1,2, or 3, and don’t die."); 
+  }  
+    
+  public void getQuestion(){  
+      
+      
+    while (health>0) {
+       Scanner input1= new Scanner(System.in);  
+      Scanner input2= new Scanner(System.in);  
+      Scanner input3= new Scanner(System.in);
+      Scanner input4= new Scanner (System.in);
+      Scanner input21= new Scanner (System.in);
+      Scanner input31 = new Scanner (System.in);
+      
+      //question 1 
+       try{
+      System.out.println ("\nYou have been wandering the forest with no map trying to find your way back to the path from which you came. The sun is beginning to set;\n"  
+              + "casting long shadows across the forest floor. You realize that if you can’t get out soon, it will become dark and escape will be nearly \nimpossible."
+              + " Suddenly,a twig snaps behind you and you spin around to see a wolf sizing you up."
+              + "\nYou reach into your bag and pull out …. "
+              + "\n A) Beef jerky \n B) A blanket \n C) A map");
+   
+      System.out.println("\n Enter your answer:"); 
+      int ans1= input1.nextInt();
+  
+      switch (ans1)
+            {
+ 
+            case 1: System.out.println ("You toss the jerky as far as you can and the wolf chases after it.\n You get away safely.");
+                break; 
+            case 2: System.out.println ("You go to pull out the blanket but it gets snagged on a zipper.\n In that moment, the wolf attacks. You take one point of damage. \n The wolf runs off.");
+                health--; 
+                break;
+            case 3: System.out.println ("You don’t have a map, silly!! The wolf uses your moment of distraction as an opportunity to attack. \n You take one point of damage. The wolf runs off.");
+                health--; 
+                break;  
+                
+            default: System.out.println("Wrong number! You lost health point for you reckless action.");
+            health--;
+            break;
+      }
+    }
+      catch (Exception e)
+    {
+     System.out.println("YOU ENTERED A WRONG INPUT. your actions are cricual to survival\n because of this, you lost a health point");
+    health--;
+    }
+       
+      System.out.println ("\n Health Points: " + health);
+      
+      
+      //question 2 
+      try{
+      System.out.println ("\nYou throw your bag back up over your shoulder and continue on through the forest until you come across a shiny gold coin lying in a pile of leaves. Do you... \n A) take it \n B) check for traps \n C) leave it");
+      System.out.println("\n Enter your answer:");
+      int ans21= input21.nextInt();
+      switch (ans21)
+      {
+          case 1: System.out.println ("You take a step towards the coin and feel something tighten around your foot. In a second you are lifted into the air and find yourself hanging upside down from a tree. \n A goblin steps out from the forest and attacks. You take one point of damage and fall from the tree, \n frightening the goblin and sending them scurrying back into the woods.");
+          health--;
+          break;
+          
+          case 2: System.out.println ("You poke at the coin with a stick, triggering a trap which you manage to avoid. However, the trap has alerted a nearby goblin of your presence, \n and you are attacked for one point of damage. The goblin turns to fix the trap and you run away.");
+          health--; 
+          break;
+          
+          case 3: System.out.println ("You give the coin a wide berth and continue on through the forest. A few meters away from the coin you notice a  goblin standing watch over it. \n You sneak silently past them and continue on through the forest.");
+          break;
+          
+          default: System.out.println("Wrong number! You lost health point for you reckless action.");
+            health--;
+            break;       
+      }
+
+      } catch (Exception e)
+    {
+     System.out.println("YOU ENTERED A WRONG INPUT. your actions are cricual to survival\n because of this, you lost a health point");
+     System.out.println("health:"+ health--);
+    }
+      
+   System.out.println ("\nHealth point: "+ health);
+      
+     //question 3 
+     try{
+       System.out.println ("\nYou continue on through the trees; very aware of the fading light around you. Deep in thought, you almost plunge into a small river that has snaked its way across the forest floor. "
+               + "\nYou pull away from the water and take a moment to assess your options for crossing.");
+       
+       System.out.println("\n Enter your answer:"); 
+       int ans2= input2.nextInt();
+       switch (ans2)
+            {
+             case 1: System.out.println("Halfway across the strangely shaped bridge, you are swatted off by a giant hand and land hard on the other side of the river, taking one point of damage. \n The “bridge” turns to look at you angrily, then goes back to sleep.");
+                 health--; 
+                 break; 
+             case 2: System.out.println ("You give yourself a running start and spring across the river. \n Unfortunately, you land wrong and roll across the ground before hitting your head on a rock. \n You take one point of damage.");
+                  health--;
+                   break; 
+             case 3: System.out.println ("You notice a low-hanging tree branch draped across the river. \n After quickly testing the strength, you kick off the river bank and swing to the other side of the water, \n landing safely on the other side. \n As you turn to continue on, you take a moment to appreciate the satisfying sound of the tree branch snapping back to its original position over the water."); 
+                  break; 
+                  
+            default: System.out.println("Wrong number! You lost health point for you reckless action.");
+            health--;
+            break;
+            }
+     } catch (Exception e)
+    {
+     System.out.println("YOU ENTERED A WRONG INPUT. your actions are cricual to survival\n because of this, you lost a health point");
+    health--;
+    }
+     
+   System.out.println ("\nHealth point: "+ health);
+   
+  //question 4 
+  try{
+   System.out.println ("\n Through the crunching of leaves under your feet, you begin to hear voices growing louder, "
+           + "speaking in a language you don’t understand.\n As the voices draw closer you hear the tell-tale clink of weapons bouncing off"
+           + " their sheaths with every step the holders take. \n (Question four- "
+           + "What do you do?? (a confront them) (b keep moving) (c hide))");   
+   
+   System.out.println("\n Enter your answer:"); 
+   int ans3= input3.nextInt();
+   switch (ans3)
+            {
+              case 1: System.out.println (" You follow the sound of the voices and find two orcs patrolling the area. \n You raise your fists to fight, and the confused orcs make a sound vaguely like laughter before swatting at you with a metal club. \n You take one point of damage and scurry away."); 
+                  health--;
+                  break;
+              case 2: System.out.println ("Despite the voices, you keep your head high and keep moving forward hoping to create a good distance between yourself and the potential enemies. \n After a couple minutes of walking, the voices fade and the forest is filled with the sound of yoour footsteps.");
+                  break;
+
+              case 3: System.out.println ("You duck into a rotting tree trunk that has been hollowed by time and make yourself as small as posible.\n The voices grow louder until they are right next to you. \n The adreneline coursing through you tells you to run, and you emerge from your hiding spot frightening the two orcs,\n one of which clubs you over the head with his fist for one point of damage as you run off. ");
+                      health--; 
+                      break; 
+            default: System.out.println("Wrong number! You lost health point for you reckless action.");
+            health--;
+            break;        
+             }
+  }
+  catch (Exception e)
+    {
+     System.out.println("YOU ENTERED A WRONG INPUT. your actions are cricual to survival\n because of this, you lost a health point");
+    health--;
+    }
+   System.out.println ("\n Health Point: "+ health);
+   
+    //validate health 
+   if (health<=0){
+       break;  //exits while loop 
+   }
+   else {   
+   //question 5
+   try{
+   System.out.println ("\nSeveral minutes of aimless wandering later, you find the scenery around you looking more familiar, \n and in the dying light you make out a path with three routes leading towards a less dense patch of forest. \n Which path will you take? \n A) right \n B) middle \n C) left");
+   System.out.println("\nEnter your answer:"); 
+   int ans31= input31.nextInt();
+   switch (ans31)
+   {
+       case 1: System.out.println ("You choose the path to the right and through the thinning trees, the last of the sunlight lights your way filling you with relief. A minute or two later you come across a sign pointing to the direction of your village. \nYour pace quickens as you head for home.");
+       break; 
+       
+       case 2: System.out.println ("You choose the middle path and as you continue walking, you get the feeling you are being watched. \n The thinning trees allow for any remaining light but you do not feel comforted by that fact. \n Seconds later a bandit jumps out of the trees and swings a rusty knife at you, causing you to drop your bag with the rest of your belongings, \n which the bandit grabs as they disappear back into the forest");
+       health--;
+       break;
+       
+       case 3: System.out.println ("You choose the left path and as you continue walking, you get the feeling you are being watched.\n The fading light makes it difficult to see but you keep moving. \nSeconds later a bandit jumps out of the trees and swings a rusty knife at you, causing you to drop your bag with the rest of your belongings, \n which the bandit grabs as they disappear back into the forest\n");
+       health--; 
+       break; 
+       
+       default: System.out.println("Wrong number! You lost health point for you reckless action.");
+            health--;
+            break;
+   }
+   }
+   catch (Exception e)
+    {
+     System.out.println("YOU ENTERED A WRONG INPUT. your actions are cricual to survival\n because of this, you lost a health point");
+    health--;
+    }
+System.out.println ("Health Point :"+ health);
+
+  //question 6 
+  try{
+System.out.println ("\n By the time you reach the end of the woods, the sun has set completely.\n"
+           + " Fortunately, you have made it back to your village. \n Just as you reach your home, you hear the growl of a stray dog behind you. "
+           + "You fumble for your keys before realizing you don’t have them on you. \nLuckily you’ve hidden a key for just such occasions. "
+           + "\n (Question six- Where is the key hidden?? (A in the mailbox) (B under the doormat) (C- in the plant pot))");
+   System.out.println ("\n Enter answer: ");
+   int ans4 = input4.nextInt (); 
+   switch (ans4)
+       
+            {case 1: System.out.println ("You quickly reach for the mailbox and the dog breaks into a run. You realize with dread that the key is not in the mailbox, \n and grab the key from its proper location under the doormat.\n As you do this, the dog sinks its fangs into your ankle for one point of damage."); 
+                     health--; 
+                     break;
+            case 2: System.out.println ("You bend down slowly and grab the key from under the doormat. The dog growls at you and breaks into a run but you are too fast \n and before the dog has reached you, you have entered your home and closed and locked the door behind you. \nYou slump down to the ground and breathe a sigh of relief. \nYou have made it home alive.");
+                     break; 
+            case 3: System.out.println ("You quickly reach for the potted plant and the dog breaks into a run. You realize with dread that the key is not there,\n and grab the key from its proper location under the doormat. As you do this, the dog sinks its fangs into your ankle for one point of damage.");
+                    health--;
+                    break;
+                    
+            default: System.out.println("Wrong number! You lost health point for you reckless action.");
+            health--;
+            break;        
+   } 
+  }
+  catch (Exception e)
+    {
+     System.out.println("YOU ENTERED A WRONG INPUT. your actions are cricual to survival\n because of this, you lost a health point");
+    health--;
+    }
+break; // ends game
+}
+  }
+  } 
+  public void results (){   //helper method 
+      
+      if (health<=0)
+              
+  {
+     System.out.println ("\n Game over");
+            
+              }
+      else {
+          System.out.println ("\n Congrats! You won! Health Point:"+ health);
+      }
+  }
+}
+
+public class Game1 {
+    int health=4;
+    public static void main(String[] args) {
+     
+     Forest player = new Forest(); 
+     player.intro();
+     player.getQuestion();    
+     player.results();
+     
+}
+}
