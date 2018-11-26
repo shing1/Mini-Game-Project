@@ -1,0 +1,49 @@
+Some research done on gui then found this tutorial online but had trouble with an unknown symbol and package images didn't work
+so left it.
+further research on "jframe" to be done at a later time. really hoping it isn't just a name the creator gave to a variable cause
+then i'd feel really dumb.
+
+
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class ImageTest {
+
+  public static void main(String[] args) {
+    ImagePanel panel = new ImagePanel(new ImageIcon(*image goes here??*).getImage());
+
+    JFrame frame = new JFrame();
+    frame.getContentPane().add(panel);
+    frame.pack();
+    frame.setVisible(true);
+  }
+}
+
+class ImagePanel extends JPanel {
+
+  private Image img; <-- having trouble with "img" why isnt it working
+
+  public ImagePanel(String img) {
+    this(new ImageIcon(img).getImage());
+  }
+
+  public ImagePanel(Image img) {
+    this.img = img;
+    Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
+    setPreferredSize(size);
+    setMinimumSize(size);
+    setMaximumSize(size);
+    setSize(size);
+    setLayout(null);
+  }
+
+  public void paintComponent(Graphics g) {
+    g.drawImage(img, 0, 0, null); //set size here?? <-- deos this affect only graphics
+  }
+
+}
